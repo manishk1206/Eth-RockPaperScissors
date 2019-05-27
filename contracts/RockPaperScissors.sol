@@ -39,14 +39,14 @@ contract RockPaperScissors is Pausable {
     mapping(address => uint256) public balances;
     
     constructor (bool _initialState, uint _timeOutLimit) Pausable(_initialState) public {
-        require(_timeOutLimit >= MIN_TIME_LIMIT, "specified _timeOutLimit too less");
+        require(_timeOutLimit >= MIN_TIME_LIMIT, "specified _timeOutLimit too small");
         timeOutLimit = _timeOutLimit;
         emit LogContractCreated(msg.sender, timeOutLimit);
     }
     
     function setTimeOutLimit (uint _timeOutLimit) public onlyOwner{
         require(timeOutLimit != _timeOutLimit,"New value should be different");
-        require(_timeOutLimit >= MIN_TIME_LIMIT, "specified _timeOutLimit too less");
+        require(_timeOutLimit >= MIN_TIME_LIMIT, "specified _timeOutLimit too small");
         timeOutLimit = _timeOutLimit;
         emit LogTimeOutChanged(msg.sender, timeOutLimit);
     }
