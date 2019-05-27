@@ -1,7 +1,7 @@
 {
-  "name": "Eth-Remittance",
+  "name": "Eth-RockPaperScissors",
   "version": "0.1.0",
-  "description": "B9lab Blockstars Ethereum  Project 2 Remittance",
+  "description": "B9lab Blockstars Ethereum  Project 3 RockPaperScissors",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manishk1206/Eth-Remittance.git"
+    "url": "git+https://github.com/manishk1206/Eth-RockPaperScissors.git"
   },
   "author": "Manish Kumar <manishk1206@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/manishk1206/Eth-Remittance/issues"
+    "url": "https://github.com/manishk1206/Eth-RockPaperScissors/issues"
   },
-  "homepage": "https://github.com/manishk1206/Eth-Remittance#readme",
+  "homepage": "https://github.com/manishk1206/Eth-RockPaperScissors#readme",
   "dependencies": {
     "dotenv": "^8.0.0",
     "ganache-cli": "^6.4.3",
