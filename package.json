@@ -1,0 +1,31 @@
+{
+  "name": "Eth-Remittance",
+  "version": "0.1.0",
+  "description": "B9lab Blockstars Ethereum  Project 2 Remittance",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manishk1206/Eth-Remittance.git"
+  },
+  "author": "Manish Kumar <manishk1206@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manishk1206/Eth-Remittance/issues"
+  },
+  "homepage": "https://github.com/manishk1206/Eth-Remittance#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "ganache-cli": "^6.4.3",
+    "openzeppelin-solidity": "^2.2.0",
+    "truffle": "^5.0.15",
+    "truffle-assertions": "^0.8.2",
+    "truffle-hdwallet-provider": "^1.0.8",
+    "uuid": "^3.3.2"
+  }
+}
