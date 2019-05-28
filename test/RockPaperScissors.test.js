@@ -210,7 +210,7 @@ contract("RockPaperScissors contract main test cases", accounts => {
             let tx = await web3.eth.getTransaction(txObj.tx);
             let gasCost = tx.gasPrice * txObj.receipt.gasUsed;
             // expected balance with the reward added account will be
-            let expectedBalance = toBN(preBalance).add(toBN(buyIn).mul(2));
+            let expectedBalance = toBN(preBalance).add(toBN(buyIn).mul(2)).sub(toBN(gasCost));
             // balance after withdrawal
             let newBalance = await web3.eth.getBalance(account1);
             // Comparing expected and actual balances to check if the account received ether
