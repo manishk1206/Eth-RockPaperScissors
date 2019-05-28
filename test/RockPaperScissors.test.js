@@ -190,6 +190,33 @@ contract("RockPaperScissors contract main test cases", accounts => {
             const event = getEventResult(txObj, "LogWithdrawWinnings");
             assert.isDefined(event, "it should emit LogWithdrawWinnings");
         });
+
+        it("the account of winner should receive ether after withdraw", async () => {
+
+            const secret = "aBc123xYz";
+            const buyIn = toWei('10', 'Gwei');
+            // Creating hashedMove1 from secret and move1
+            let hashedMove1 = await instance.getGameHash(secret, Move.PAPER).call();
+            // Player1 creates a game
+            await instance.createGame(hashedMove1, account2, { from: account1, value: buyIn });
+            // Player2 Joins
+            await instance.joinGame(hashedMove1, Move.SCISSORS, { from: account2, value: buyIn });
+            // balance before reveal or withdraw
+            let preBalance = await web3.eth.getBalance(account1);
+            // Player1 reveals
+            await instance.revealAndFinish(secret, Move.PAPER, { from: account1 });
+            // player 1 tries to withdraw
+            const txObj = await instance.withdrawWinnings({ from: account1 });
+            let tx = await web3.eth.getTransaction(txObj.tx);
+            let gasCost = tx.gasPrice * txObj.receipt.gasUsed;
+            // expected balance with the reward added account will be
+            let expectedBalance = toBN(preBalance).add(toBN(buyIn).mul(2));
+            // balance after withdrawal
+            let newBalance = await web3.eth.getBalance(account1);
+            // Comparing expected and actual balances to check if the account received ether
+            assert.strictEqual(newBalance, expectedBalance.toString(), "New balance does not match expected balance");
+        });
+    
     });
 
     describe("Testing CANCEL Functionality", () => {
