@@ -1,5 +1,5 @@
 # Eth-RockPaperScissors
-Classic game of Rock Paper Scissors implemented as smart contracts in solidity. 3rd project- B9lab.
+Classic game of Rock Paper Scissors implemented as smart contracts in solidity.
 
 You will create a smart contract named RockPaperScissors whereby:
 
